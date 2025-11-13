@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEPI do Joca - AEE</title>
+
+  <!-- Ícones Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+  <!-- Fonte Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #213d62; 
+      margin: 0;
+      padding: 0;
+    }
+
+     /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .aee-intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .aee-intro i {
+      font-size: 60px;
+      color: #004aad;
+    }
+
+    h2 {
+      color: #004aad;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      text-align: justify;
+      color: #333;
+    }
+
+    .aee-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .aee-box {
+      background: #eaf2ff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .aee-box:hover {
+      transform: translateY(-5px);
+      background: #d8e7ff;
+    }
+
+    .aee-box i {
+      font-size: 40px;
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    /* ===== RODAPÉ ===== */
+footer {
+  background: linear-gradient(135deg, #0f4777, #00325a);
+  color: #f8f7f7;
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 4px solid #ffd700;
+}
+
+.footer-content p {
+  font-size: 0.95rem;
+  margin: 10px auto 20px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #f6f1f133;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}                                              
+
+.footer-bottom p{
+    color: #eaf2ff;
+}
+
+  </style>
+</head>
+
+<body>
+   
+   <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="aee-intro">
+      <i class="bi bi-lightbulb"></i>
+      <h2>O que é o AEE?</h2>
+      <p>O Atendimento Educacional Especializado (AEE) tem como objetivo garantir o direito à educação de qualidade para estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades. O AEE oferece suporte pedagógico, recursos e adaptações que promovem a inclusão e o aprendizado de todos.</p>
+    </section>
+
+    <section>
+      <h2>Objetivos do AEE</h2>
+      <div class="aee-info">
+        <div class="aee-box">
+          <i class="bi bi-heart"></i>
+          <h3>Inclusão</h3>
+          <p>Garantir a participação plena de todos os alunos nas atividades escolares, respeitando suas diferenças.</p>
+        </div>
+
+        <div class="aee-box">
+          <i class="bi bi-person-gear"></i>
+          <h3>Autonomia</h3>
+          <p>Desenvolver habilidades que favoreçam a independência e a confiança dos estudantes.</p>
+        </div>
+
+        <div class="aee-box">
+          <i class="bi bi-laptop"></i>
+          <h3>Tecnologia Assistiva</h3>
+          <p>Utilizar ferramentas e recursos tecnológicos que facilitem o processo de ensino-aprendizagem.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+   
+   <!-- Rodapé -->
+<footer>
+  <div class="footer-content">
+    <h3>CEPI Joaquim Carvalho Ferreira</h3>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CEPI Joaquim Carvalho Ferreira - Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | CEPI Professor Joaquim Carvalho Ferreira</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+    
+   /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+    
+
+    /* Menu responsivo */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        color: white;
+      }
+    }
+
+    /* ====== Seção com texto e carrossel ====== */
+    .intro-section {
+      padding: 4rem 2rem;
+      background: var(--bg-light);
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease;
+    }
+
+    .intro-section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .intro-section p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 20px;
+    }
+
+    .carousel img.active {
+      display: block;
+      animation: fadeIn 1s ease;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+
+    .carousel button:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel button.prev { left: 10px; }
+    .carousel button.next { right: 10px; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== Contato ====== */
+    section {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .contact-box {
+      background: var(--bg-light);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-box:hover {
+      transform: scale(1.01);
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      padding: 1rem;
+    }
+
+    .contact-info h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 8px rgba(0, 85, 255, 0.3);
+    }
+
+    button {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.9rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0047c2;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      margin-top: 3rem;
+      filter: saturate(1.1);
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+    }
+    
+  </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção de Introdução + Carrossel -->
+  <div class="intro-section">
+    <h2>Entre em contato conosco!</h2>
+    <p>O Colégio Estadual Professor Joaquim Carvalho Ferreira é uma instituição comprometida com a formação integral do estudante. 
+    Nossa missão é oferecer uma educação pública de qualidade, com infraestrutura moderna e professores dedicados, 
+    promovendo o desenvolvimento intelectual, cultural e social dos alunos.</p>
+
+    <div class="carousel">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipMwildw393TtSspUIMQPlzpj2VhVGtfXLtUeEzc=w1024-k" class="active" alt="Fachada da escola">
+    </div>
+  </div>
+
+  <!-- Seção de Contato -->
+  <section>
+    <div class="contact-box">
+      <div class="contact-info">
+        <h2>Informações de Contato</h2>
+        <p><strong>Endereço:</strong><br>Av. Fernão Dias Paes Leme, Quadra 32, s/n - Capuava, Goiânia - GO, 74450-200</p>
+        <p><strong>Telefone:</strong><br> (62) 99835-2461</p>
+        <p><strong>Instagran:</strong><br>@cepi_joaquim</p>
+        <p><strong>Horário de Funcionamento:</strong><br>Segunda a Sexta: 07h às 17h</p>
+      </div>
+
+    <!-- Mapa -->
+     
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.345409884441!2d-49.3307077!3d-16.6554312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef3b03d4d11d9%3A0x6e9a804a63cb0418!2sCol%C3%A9gio%20Estadual%20Professor%20Joaquim%20Carvalho%20Ferreira!5e0!3m2!1spt-BR!2sbr!4v1730824300000!5m2!1spt-BR!2sbr"
+      allowfullscreen="-16.655431, -49.330707"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Colégio Estadual Professor Joaquim Carvalho Ferreira. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Menu responsivo
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Carrossel
+    const images = document.querySelectorAll('.carousel img');
+    const prevBtn = document.querySelector('.carousel .prev');
+    const nextBtn = document.querySelector('.carousel .next');
+    let index = 0;
+
+    function showImage(i) {
+      images.forEach(img => img.classList.remove('active'));
+      images[i].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : images.length - 1;
+      showImage(index);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index < images.length - 1) ? index + 1 : 0;
+      showImage(index);
+    });
+
+    // Troca automática
+    setInterval(() => {
+      index = (index < images.length - 1) ? index + 1 : 0;
+      showImage(index);
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ensino Médio | CEPI DO JOCA</title>
+
+    <!-- Ícones (para o menu hambúrguer) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #08a510;
+        --secondary: #186abc;
+        --bg: #ecf5ec;
+        --text-dark: #1c1c1c;
+        --white: #e6db08;
+        --radius: 18px;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        --transition: 0.4s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Georgia', serif;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+  @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          background: var(--primary);
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 100%;
+          text-align: center;
+          display: none;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url("https://images.unsplash.com/photo-1571260899304-425eee4c7efc") center/cover no-repeat;
+        color: #fff;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      /* ===== MAIN ===== */
+      main {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
+
+      section {
+        margin-bottom: 5rem;
+      }
+
+      section h2 {
+        text-align: center;
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        margin: 0.6rem auto;
+        border-radius: 2px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .content img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .text {
+        line-height: 1.9;
+        font-size: 1.05rem;
+        text-align: justify;
+      }
+
+      .text strong {
+        color: var(--primary);
+      }
+
+      /* ===== PROJETOS E TECNOLOGIA ===== */
+      .projetos {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .projetos h2 {
+        color: #fff;
+      }
+
+      .projetos ul {
+        list-style: none;
+        max-width: 700px;
+        margin: 2rem auto;
+        text-align: left;
+      }
+
+      .projetos li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 1.05rem;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: #111;
+        color: #eee;
+        text-align: center;
+        padding: 2.5rem 1rem;
+      }
+
+      footer p {
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Ensino Médio</h1>
+      <p>
+        Preparando nossos alunos para o futuro com conhecimento, valores e
+        inovação.
+      </p>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <!-- FORMAÇÃO -->
+      <section>
+        <h2>Formação Integral e Preparação</h2>
+        <div class="content">
+          <div class="text">
+            <p>
+              O <strong>Ensino Médio</strong> representa a conclusão da
+              educação básica e a etapa que prepara o estudante para os
+              desafios do mundo moderno. Aqui, o foco é o
+              <strong>desenvolvimento integral</strong>, que une o aprendizado
+              acadêmico ao crescimento pessoal e sempre valorizando a subjetividade de cada aluno.
+            </p>
+            <p>
+              Nossos alunos são incentivados a se tornarem
+              <strong>autônomos, críticos e criativos</strong>, capazes de
+              interpretar o mundo e transformar a sociedade com atitudes
+              conscientes e inovadoras.
+            </p>
+          </div>
+          <img
+            src="https://diaonline.ig.com.br/wp-content/uploads/2024/11/cepi-do-esporte.jpg"
+            alt="Estudantes do ensino médio em sala de aula"
+          />
+        </div>
+      </section>
+
+      <!-- DISCIPLINAS -->
+      <section>
+        <h2>Disciplinas e Áreas do Conhecimento</h2>
+        <div class="content">
+          <img
+            src="https://tribunadoplanalto.com.br/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-24-at-10.36.12.jpeg"
+            alt="Livros e cadernos de estudo"
+          />
+          <div class="text">
+            <p>
+              O currículo é organizado em áreas do conhecimento que promovem uma
+              formação ampla e integrada:
+            </p>
+            <ul>
+              <li>📚 Linguagens e suas Tecnologias</li>
+              <li>🧮 Matemática e suas Aplicações</li>
+              <li>🔬 Ciências da Natureza e suas Tecnologias</li>
+              <li>🌎 Ciências Humanas e Sociais Aplicadas</li>
+            </ul>
+            <p>
+              Essa estrutura permite ao estudante desenvolver competências
+              essenciais para o <strong>ENEM</strong>, vestibulares e o mercado
+              de trabalho.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section class="projetos">
+        <h2>Projetos e Inovação</h2>
+        <ul>
+          <li>💻 Projetos de Inovação e Tecnologia Educacional</li>
+          <li>🌍 Feira de Profissões e Orientação Vocacional</li>
+          <li>🎙️ Simulações de Debates e Produções Multimídia</li>
+          <li>🎭 Atividades culturais e esportivas integradas</li>
+          <li>📈 Projetos Empreendedores e Sustentáveis</li>
+        </ul>
+        <p>
+          O Ensino Médio do CEPI DO JOCA prepara cada aluno para trilhar seu
+          próprio caminho, unindo o conhecimento acadêmico à vivência prática,
+          à autonomia e à cidadania.
+        </p>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        © 2025 Colégio Estadual Prof. Joaquim Carvalho Ferreira — Todos os
+        direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      // Menu responsivo
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      toggle.addEventListener("click", () => {
+        menu.querySelector("ul").classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

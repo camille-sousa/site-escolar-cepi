@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEPI DO JOCA</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --text-dark: #20b52f;
+      --primary: #2563eb;
+      --secondary: #bb1515;
+      --radius: 16px;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --gap: 1.5rem;
+      --transition: all 0.4s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ======== CABEÇALHO ======== */
+    .header {
+      background: #004aad;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo a { 
+      font-size: 1.6em;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu ul li a {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .menu ul li a:hover {
+      color: #ffdd00;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+     font-size: 1.8em;
+     cursor: pointer;
+    }
+
+    .logo img{
+      width: 40px;
+      height: 40px;
+      padding: top 10px;
+    }
+
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 1rem 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* === Seção Sobre === */
+    .sobre {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sobre h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .sobre p {
+      text-align: justify;
+      color: #374151;
+      font-size: 1rem;
+    }
+
+    /* === Cartões === */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--gap);
+      padding: 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    
+
+
+    /* === RODAPÉ === */
+  footer {
+     background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+   font-size: 0.9rem;
+   margin-top: 40px;
+  }
+  </style>
+</head>
+<body>
+
+  <body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sobre -->
+  <section class="sobre">
+    <h2>Sobre</h2>
+    <p>
+     🎓 O CEPI Professor Joaquim Carvalho Ferreira é uma instituição comprometida com a excelência na educação, onde o aprendizado vai muito além das salas de aula. Aqui, conhecimento, criatividade e convivência caminham juntos, formando cidadãos curiosos, solidários e preparados para o mundo.
+Mais do que ensinar, abrimos portas para novas descobertas, sonhos e oportunidades — porque acreditamos que a educação é o primeiro passo para transformar o futuro! 🌟
+    </p>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards">
+    <div class="card">
+      <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2024/12/Estudantes-da-rede-estadual-se-destacam-em-Olimpiada-de-IA-Aplicada-na-Campus-Party-2024-2-1215x683.jpeg" alt="">
+      <div class="card-content">
+        <h3>Tecnologia da Informação Aplicada</h3>
+        <p>Competição promovida pelo Governo de Goiás durante a Campus Party 2024, premiando alunos do CEPI Professor Joaquim Carvalho Ferreira.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tmjuntos.com.br/wp-content/uploads/2023/03/Podcast-escolar.jpg" alt="">
+      <div class="card-content">
+        <h3>PODemos conversar?</h3>
+        <p>O projeto Podcast Escolar incentiva alunos a desenvolverem comunicação e protagonismo. Eles produzem roteiros e episódios sobre cultura, vestibulares e assunto diversos, dando voz às suas ideias e experiências.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://media.istockphoto.com/id/1300327482/pt/foto/immigrants-of-different-countries-and-exchange-students-in-language-school.jpg?s=612x612&w=0&k=20&c=SvpY_zDyaX008a860g_FUdjV2UpZF4nu4b_7x7_NcLY=" alt="">
+      <div class="card-content">
+        <h3>Oportunidades no Exterior</h3>
+        <p>Os alunos têm a chance de vivenciar novas culturas e expandir horizontes. Estudar fora do país fortalece a autonomia, o respeito e o aprendizado de idiomas.</p>
+      </div>
+    </div>
+    
+    
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_2DJmnHEZUiiLHMh4mHtpgvTWVzSfjW84XJL1ngkMhc2A8X25YgEb2e7cGp-GgRhw3yQ&usqp=CAU" alt="">
+      <div class="card-content">
+        <h3>Bolsa Profissionalizante</h3>
+        <h2>O que é ?</h2>
+        <p>O programa Bolsa Profissionalizante incentiva a formação técnica de estudantes, oferecendo auxílio financeiro para conter a evasão escolar, com o aluno podendo receber 300 reais por mês.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://agenciacoradenoticias.go.gov.br/wp-content/uploads/2024/02/Bolsa-Estudo.jpg" alt="">
+      <div class="card-content">
+        <h3>Alelo bolsa de estudo</h3>
+        <h2>O que é?</h2>
+        <p> Também é um benefício para ser um apoio para os aluno. Afim, de combater a evasão escolar, incentivar a aprendizagem, e oferecer apoio financeiro 
+          e desenvolver responsabilidade financeira.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 CEPI Joaquim Carvalho Ferreira - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Menu responsivo
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => menu.querySelector('ul').classList.toggle('active'));
+
+    // Carrossel
+    const slides = document.querySelector('.slides');
+    const slideImages = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let index = 0;
+    const total = slideImages.length;
+    const intervalTime = 4000;
+    let autoSlide;
+
+    function showSlide(i) {
+      index = (i + total) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() { showSlide(index + 1); }
+    function prevSlide() { showSlide(index - 1); }
+
+    nextBtn.addEventListener('click', () => { nextSlide(); resetAuto(); });
+    prevBtn.addEventListener('click', () => { prevSlide(); resetAuto(); });
+
+    function startAuto() { autoSlide = setInterval(nextSlide, intervalTime); }
+    function resetAuto() { clearInterval(autoSlide); startAuto(); }
+
+    slides.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slides.addEventListener('mouseleave', startAuto);
+
+    startAuto();
+  </script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos Técnicos | CEPI DO JOCA</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007bff;
+      --secondary: #00d4ff;
+      --bg: #f4f7fb;
+      --text-dark: #1a1a1a;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: rgba(0, 0, 0, 0.15);
+      --transition: 0.4s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+    }
+
+    /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+    /* ======== CONTEÚDO PRINCIPAL ======== */
+  
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Introdução */
+    .intro {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px var(--shadow);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      line-height: 1.8rem;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    /* Grade de cursos */
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px var(--shadow);
+      overflow: hidden;
+      transition: transform var(--transition);
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Carrossel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+
+    .carousel button:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel .prev { left: 15px; }
+    .carousel .next { right: 15px; }
+
+    .content {
+      padding: 1.5rem;
+    }
+
+    .content h3 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .content p {
+      font-size: 0.95rem;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      font-size: 0.95rem;
+    }
+
+    /* ======== RESPONSIVIDADE ======== */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: var(--radius);
+        box-shadow: 0 5px 15px var(--shadow);
+      }
+
+      .menu ul {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu.show {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Seção Hero -->
+  <main>
+    <section class="intro">
+      <h2>Formação Técnica Integrada</h2>
+      <p>
+        No CEPI DO JOCA, os cursos técnicos unem inovação, tecnologia e aprendizado prático.
+        Aqui, nossos estudantes exploram o mundo digital, aprendem com projetos reais e
+        desenvolvem competências que os preparam para o futuro do trabalho. 
+      </p>
+      <h2>Com a parceria da Escola do Futuro - Jose Luiz bittencourt.</h2>
+    </section>
+
+    <section class="courses">
+      <!-- Cursos preservados -->
+      <div class="course-card"><div class="carousel" id="carousel-frontend">
+        <img src="https://www.impacta.com.br/blog/wp-content/uploads/2022/10/O-que-um-Front-End-Developer-precisa-saber-para-ter-sucesso.jpg" class="active">
+        <button class="prev" onclick="changeSlide('carousel-frontend', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-frontend', 1)">❯</button>
+      </div><div class="content"><h3>Front-End</h3><p>Aprenda HTML, CSS e JavaScript e crie sites modernos, acessíveis e responsivos.</p></div></div>
+
+      <div class="course-card"><div class="carousel" id="carousel-backend">
+        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f" class="active">
+        <button class="prev" onclick="changeSlide('carousel-backend', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-backend', 1)">❯</button>
+      </div><div class="content"><h3>Back-End</h3><p>Aprenda bancos de dados, APIs e servidores com linguagens como Python e Node.js.</p></div></div>
+
+      <div class="course-card"><div class="carousel" id="carousel-framework">
+        <img src="https://www.locaweb.com.br/blog/wp-content/uploads/2016/06/o-que-e-framework.png" class="active">
+        <button class="prev" onclick="changeSlide('carousel-framework', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-framework', 1)">❯</button>
+      </div><div class="content"><h3>Frameworks</h3><p>Explore React, Vue e Django e aprimore a agilidade e qualidade do desenvolvimento.</p></div></div>
+
+      <div class="course-card"><div class="carousel" id="carousel-uxui">
+        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d" class="active">
+        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786">
+        <button class="prev" onclick="changeSlide('carousel-uxui', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-uxui', 1)">❯</button>
+      </div><div class="content"><h3>UX/UI Design</h3><p>Crie interfaces intuitivas, belas e funcionais com foco na experiência do usuário.</p></div></div>
+
+      <div class="course-card"><div class="carousel" id="carousel-pratica">
+        <img src="https://www.sp.senac.br/documents/20125/0/27197_01-02-2024_685003168.webp/5486d839-da16-2941-56f7-5bd170f7c5be?version=1.0&t=1711114345649null&download=true" class="active">
+        <button class="prev" onclick="changeSlide('carousel-pratica', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-pratica', 1)">❯</button>
+      </div><div class="content"><h3>Prática Profissional</h3><p>Coloque seus conhecimentos em ação com projetos reais e experiências práticas.</p></div></div>
+
+      <div class="course-card"><div class="carousel" id="carousel-projeto">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" class="active">
+        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de1cd0e">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+        <button class="prev" onclick="changeSlide('carousel-projeto', -1)">❮</button>
+        <button class="next" onclick="changeSlide('carousel-projeto', 1)">❯</button>
+      </div><div class="content"><h3>Projeto Integrador</h3><p>Desenvolva soluções completas que unem criatividade, inovação e trabalho em equipe.</p></div></div>
+
+      <!-- Novo Curso: Go Inglish! -->
+      <div class="course-card">
+        <div class="carousel" id="carousel-ingles">
+          <img src="https://static.portaldaindustria.com.br/portaldaindustria/noticias/media/imagem_plugin/shutterstock_CDgbBvH.jpg" class="active">
+          <button class="prev" onclick="changeSlide('carousel-ingles', -1)">❮</button>
+          <button class="next" onclick="changeSlide('carousel-ingles', 1)">❯</button>
+        </div>
+        <div class="content">
+          <h3>Go Inglish! — Língua Estrangeira</h3>
+          <h1>o que é?</h1>
+          <p>O Go English! é um projeto educacional de ensino de língua inglesa criado para escolas públicas e técnicas (como os CEPIs, em Goiás). 💬🇬🇧
+          Ele faz parte do programa estadual de fortalecimento do bilinguismo e da formação global dos alunos, e tem como objetivo aproximar os estudantes do inglês de forma prática, divertida e conectada ao cotidiano — com foco em comunicação real, cultura e oportunidades de intercâmbio.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Colégio Estadual Prof. Joaquim Carvalho Ferreira — Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Menu responsivo
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('show'));
+
+    // Função de carrossel
+    function changeSlide(id, direction) {
+      const carousel = document.getElementById(id);
+      const images = carousel.querySelectorAll("img");
+      let index = Array.from(images).findIndex(img => img.classList.contains("active"));
+      images[index].classList.remove("active");
+      index = (index + direction + images.length) % images.length;
+      images[index].classList.add("active");
+    }
+  </script>
+</body>
+</html>

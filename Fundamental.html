@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ensino Fundamental II | CEPI DO JOCA</title>
+
+    <!-- Ícones (para o menu hambúrguer) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #007bff;
+        --secondary: #00d4ff;
+        --bg: #f4f8fc;
+        --text-dark: #1c1c1c;
+        --white: #fff;
+        --radius: 18px;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        --transition: 0.4s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+     /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          background: var(--primary);
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 100%;
+          text-align: center;
+          display: none;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      /* ===== HERO SECTION ===== */
+      .hero {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") center/cover no-repeat;
+        color: #fff;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      /* ===== MAIN ===== */
+      main {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
+
+      section {
+        margin-bottom: 5rem;
+      }
+
+      section h2 {
+        text-align: center;
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        margin: 0.6rem auto;
+        border-radius: 2px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .content img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .text {
+        line-height: 1.9;
+        font-size: 1.05rem;
+        text-align: justify;
+      }
+
+      .text strong {
+        color: var(--primary);
+      }
+
+      /* ===== ATIVIDADES ===== */
+      .atividades {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .atividades h2 {
+        color: #fff;
+      }
+
+      .atividades ul {
+        list-style: none;
+        max-width: 700px;
+        margin: 2rem auto;
+        text-align: left;
+      }
+
+      .atividades li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 1.05rem;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: #111;
+        color: #eee;
+        text-align: center;
+        padding: 2.5rem 1rem;
+      }
+
+      footer p {
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+
+  <body>
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+   
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Ensino Fundamental II</h1>
+      <p>
+        Desenvolvendo o conhecimento, a curiosidade e os valores que formam os
+        cidadãos do futuro.
+      </p>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <!-- SOBRE O ENSINO FUNDAMENTAL II -->
+      <section>
+        <h2>Aprendizado e Desenvolvimento</h2>
+        <div class="content">
+          <div class="text">
+            <p>
+              O <strong>Ensino Fundamental II</strong> é uma das fases mais
+              importantes da jornada escolar. Nele, os estudantes constroem as
+              bases do conhecimento e ampliam suas habilidades cognitivas,
+              sociais e emocionais.
+            </p>
+            <p>
+              Nesta etapa, priorizamos uma <strong>aprendizagem significativa</strong>,
+              que incentiva a curiosidade, o pensamento crítico e a autonomia. Os
+              professores atuam como mediadores, guiando o aluno na descoberta
+              do saber e na formação de valores éticos.
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+            alt="Alunos estudando em grupo"
+          />
+        </div>
+      </section>
+
+      <!-- DISCIPLINAS -->
+      <section>
+        <h2>Disciplinas e Áreas do Conhecimento</h2>
+        <div class="content">
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3"
+            alt="Livros e cadernos escolares"
+          />
+          <div class="text">
+            <p>
+              O currículo do Ensino Fundamental II é composto por disciplinas
+              que abrangem as diversas áreas do saber:
+            </p>
+            <ul>
+              <li>🧮 Matemática e Ciências da Natureza</li>
+              <li>📖 Língua Portuguesa e Literatura</li>
+              <li>🌎 História e Geografia</li>
+              <li>🎨 Arte e Educação Física</li>
+              <li>💻 Tecnologia Educacional</li>
+            </ul>
+            <p>
+              As aulas são planejadas para tornar o aprendizado
+              <strong>dinâmico, contextualizado e interdisciplinar</strong>,
+              estimulando o raciocínio lógico, a criatividade e o trabalho em
+              equipe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ATIVIDADES EXTRAS -->
+      <section class="atividades">
+        <h2>Atividades Extracurriculares</h2>
+        <ul>
+          <li>🧩 Feiras de Ciências e Projetos Interdisciplinares</li>
+          <li>🎭 Projeto de Teatro, Música e Arte</li>
+          <li>⚽ Competições esportivas e torneios internos</li>
+          <li>📚 Clubes de Leitura e Produção Textual</li>
+          <li>🌱 Projetos de Sustentabilidade e Cidadania</li>
+        </ul>
+        <p>
+          Essas experiências ampliam o aprendizado e fortalecem o vínculo entre
+          os alunos, tornando o ambiente escolar mais rico e acolhedor.
+        </p>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        © 2025 Colégio Estadual Prof. Joaquim Carvalho Ferreira — Todos os
+        direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      // Script do menu responsivo
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      toggle.addEventListener("click", () => {
+        menu.querySelector("ul").classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

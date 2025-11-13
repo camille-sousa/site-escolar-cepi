@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colégio Estadual Prof. Joaquim Carvalho Ferreira | Estudos</title>
+
+    <!-- Ícones (para o menu hambúrguer) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Georgia', serif;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+     
+    /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+      
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          background: var(--primary);
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 100%;
+          text-align: center;
+          display: none;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      /* ===== HERO SECTION ===== */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1509062522246-3755977927d7") center/cover no-repeat;
+        color: #fff;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      /* ===== MAIN ===== */
+      main {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
+
+      section {
+        margin-bottom: 5rem;
+      }
+
+      section h2 {
+        text-align: center;
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        margin: 0.6rem auto;
+        border-radius: 2px;
+      }
+
+      /* ===== ÁREAS DE ESTUDO ===== */
+      .areas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .area-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+
+      .area-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .area-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .area-content {
+        padding: 1.8rem;
+      }
+
+      .area-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .area-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: justify;
+      }
+
+      /* ===== VIDA ESCOLAR ===== */
+      .vida-escolar {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .vida-escolar p {
+        max-width: 850px;
+        margin: 1rem auto;
+        line-height: 1.9;
+        font-size: 1.1rem;
+      }
+
+     /* === RODAPÉ === */
+    footer {
+     background-color: #004aad;
+     color: white;
+     text-align: center;
+     padding: 10px;
+     font-size: 0.9rem;
+    margin-top: 40px;
+    }
+
+      /* ===== RESPONSIVO ===== */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+     <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Formando Cidadãos do Futuro</h1>
+      <p>Educação moderna, inclusiva e inspiradora — prepare-se para descobrir o conhecimento de uma nova forma.</p>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+      <!-- SEÇÃO ENSINO FUNDAMENTAL II -->
+      <section>
+        <h2>Ensino Fundamental II</h2>
+        <div class="areas">
+          <div class="area-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" class="area-img" />
+            <div class="area-content">
+              <h3>Aprendizado em Ação</h3>
+              <p>O Ensino Fundamental II busca despertar o prazer de aprender por meio de experiências práticas, desafios criativos e incentivo à curiosidade.</p>
+            </div>
+          </div>
+          <div class="area-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" class="area-img" />
+            <div class="area-content">
+              <h3>Integração e Valores</h3>
+              <p>A formação vai além da sala de aula, desenvolvendo respeito, empatia e trabalho em equipe.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO ENSINO MÉDIO -->
+      <section>
+        <h2>Ensino Médio</h2>
+        <div class="areas">
+          <div class="area-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsXxyIseL_rp16D_vZ80qOB5UbvjmgkG0uIw&s" class="area-img" />
+            <div class="area-content">
+              <h3>Preparação para o Futuro</h3>
+              <p>No Ensino Médio, o aluno é preparado para os desafios do ENEM, vestibulares e da vida profissional.</p>
+            </div>
+          </div>
+          <div class="area-card">
+            <img src="https://www.pi.gov.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-12-at-15.05.12-e1749755166638.jpeg" class="area-img" />
+            <div class="area-content">
+              <h3>Inovação e Tecnologia</h3>
+              <p>As aulas incorporam ferramentas digitais, projetos e espaços criativos para estimular o protagonismo juvenil.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO AEE -->
+      <section>
+        <h2>Atendimento Educacional Especializado (AEE)</h2>
+        <div class="areas">
+          <div class="area-card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" class="area-img" />
+            <div class="area-content">
+              <h3>Inclusão e Apoio</h3>
+              <p>O AEE oferece suporte pedagógico especializado a alunos com deficiência, transtornos ou altas habilidades, garantindo o acesso ao aprendizado de forma justa e inclusiva.</p>
+            </div>
+          </div>
+          <div class="area-card">
+            <img src="https://prefeitura.pbh.gov.br/sites/default/files/styles/slideshow/public/noticia/img/2017-11/ed.png?itok=LXMCYn6q" class="area-img" />
+            <div class="area-content">
+              <h3>Desenvolvimento Individual</h3>
+              <p>As atividades são planejadas para promover a autonomia, o desenvolvimento de potencialidades e o fortalecimento da autoestima de cada estudante.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDA ESCOLAR -->
+      <section class="vida-escolar">
+        <h2>Vida Escolar Vibrante</h2>
+        <p>Nosso colégio acredita que o aprendizado vai além dos livros. Aqui, o estudante desenvolve habilidades para a vida, constrói amizades e participa de eventos que inspiram crescimento.</p>
+      </section>
+    </main>
+
+ <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 CEPI Joaquim Carvalho Ferreira - Todos os direitos reservados.</p>
+  </footer>
+
+
+    <script>
+      // Script para o menu responsivo
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      toggle.addEventListener("click", () => {
+        menu.querySelector("ul").classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

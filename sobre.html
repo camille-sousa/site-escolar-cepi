@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre o CEPI - Juntos Somos 10</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+  <style>
+    /* ======== RESET E ESTILO GERAL ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+    /* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004aad;
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.logo img{
+  width: 40px;
+  height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+    
+    /* ======== MENU MOBILE ======== */
+    @media (max-width: 768px) {
+      .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #004aad;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .menu.open {
+        max-height: 250px;
+      }
+
+      .menu ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        gap: 15px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ======== CONTEÚDO ======== */
+    main.sobre {
+      padding: 120px 10% 40px;
+    }
+
+    .introducao {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .introducao h1 {
+      font-size: 2.2em;
+      color: #004aad;
+      margin-bottom: 15px;
+    }
+
+    .bloco  {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .bloco.reverso {
+      flex-direction: row-reverse;
+    }
+
+    .texto {
+      flex: 1;
+      min-width: 300px;
+
+    }
+
+    .texto h2 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .texto p {
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    .imagem {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .imagem img {
+      width: 350px;
+      height: 350px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .final {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.1em;
+    }
+
+    .final h3 {
+      color: #004aad;
+      margin-top: 15px;
+    }
+
+    /* === RODAPÉ === */
+   footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    } 
+
+    @media (max-width: 768px) {
+      .bloco {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .imagem img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo"> 
+      <img src="https://jcf.gpacepi.com.br/gpa/images/logo.png" alt="img">
+      <a href="index.html">CEPI Professor Joaquim Carvalho Ferreira.
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <i class="ri-menu-line"></i>
+    </button>
+
+    <nav class="menu" id="menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Aluno.html">Alunos</a></li>
+        <li><a href="Ensino.html">Ensino</a></li>
+         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======== CONTEÚDO PRINCIPAL ======== -->
+  <main class="sobre">
+    <section class="introducao">
+      <h1>CEPI — Juntos Somos 10</h1>
+      <p>
+        Mais do que um simples slogan, <strong>“CEPI, juntos somos 10”</strong> é uma filosofia de vida escolar. Acreditamos que cada aluno, professor e colaborador faz parte de uma grande família que aprende, cresce e vence unida.
+      </p>
+      <p>
+        Inspirados pelos <strong>Quatro Pilares da Educação</strong> — aprender a conhecer, a fazer, a conviver e a ser —, nosso compromisso é oferecer uma formação completa, unindo conhecimento, empatia e propósito.
+      </p>
+      <p>
+        Estamos entre as melhores escolas de Goiânia 
+      </p>
+    </section>
+
+    <!-- DIREÇÃO -->
+    <section class="bloco">
+      <div class="texto">
+        <h2>Direção</h2>
+        <p>
+          A direção do CEPI lidera com coração e visão. Seu papel vai além da gestão — é inspirar alunos e educadores a enxergarem o aprendizado como uma jornada de transformação e crescimento.
+        </p>
+        <p>
+          Cada decisão é guiada pelo compromisso com a educação de qualidade e com o desenvolvimento humano. A direção trabalha para manter o CEPI como um espaço acolhedor, moderno e motivador para todos.
+        </p>
+      </div>
+      <div class="imagem">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmM3OQX6HR7SxSzIpfL00RhL1BnsiXmde93g&s" alt="Direção escolar">
+      </div>
+    </section>
+
+    <!-- COORDENAÇÃO -->
+    <section class="bloco reverso">
+      <div class="imagem">
+        <img src="" alt="Coordenação pedagógica">
+      </div>
+      <div class="texto">
+        <h2>Coordenação</h2>
+        <p>
+          A coordenação pedagógica é o elo entre a direção e a sala de aula. Com sensibilidade e dedicação, ela garante que o aprendizado seja contínuo, significativo e humano.
+        </p>
+        <p>
+          Nossos coordenadores acompanham de perto cada aluno, incentivando a superação de desafios e promovendo o diálogo entre professores, estudantes e famílias. A coordenação propociona um ambiente onde seus alunos podem 
+          expressar a sua arte.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROFESSORES -->
+    <section class="bloco">
+      <div class="texto">
+        <h2>Professores</h2>
+        <p>
+          Os professores do CEPI são verdadeiros guias do conhecimento. Com dedicação e criatividade, transformam o conteúdo em experiências únicas que despertam curiosidade e paixão por aprender.
+        </p>
+        <p>
+          Mais do que ensinar, nossos educadores inspiram — formando cidadãos preparados, solidários e conscientes do seu papel no mundo.
+          Com as melhores formações e dinamicas para o aprendizado dos seus filhos.
+        </p>
+      </div>
+      <div class="imagem">
+        <img src="https://cdn.pixabay.com/photo/2017/08/01/08/29/people-2562626_1280.jpg" alt="Professores em sala de aula">
+      </div>
+    </section>
+
+        <!-- PROFESSORES DO AEE -->
+    <section class="bloco reverso">
+      <div class="imagem">
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/teacher-1836927_960_720.jpg" alt="Professores do AEE">
+      </div>
+      <div class="texto">
+        <h2>Professores do AEE</h2>
+        <p>
+          Os professores do Atendimento Educacional Especializado (AEE) são fundamentais na inclusão escolar. Com paciência e empatia, adaptam estratégias para que todos os alunos aprendam e se desenvolvam plenamente.
+        </p>
+        <p>
+          Seu compromisso é garantir que a educação seja acessível, justa e cheia de significado, respeitando as individualidades de cada estudante.
+        </p>
+      </div>
+    </section>
+
+    <!-- COZINHA -->
+    <section class="bloco">
+      <div class="texto">
+        <h2>Cozinha</h2>
+        <p>
+          Na cozinha do CEPI, o carinho é o principal ingrediente. As profissionais preparam cada refeição com cuidado, garantindo sabor, nutrição e energia para os estudantes enfrentarem o dia com disposição.
+        </p>
+        <p>
+          Além de alimentar, elas acolhem com um sorriso, tornando os momentos de refeição ainda mais especiais.
+        </p>
+      </div>
+      <div class="imagem">
+        <img src="https://cdn.pixabay.com/photo/2016/03/05/22/08/kitchen-1238868_960_720.jpg" alt="Equipe da cozinha escolar">
+      </div>
+    </section>
+
+    <!-- EQUIPE DE LIMPEZA -->
+    <section class="bloco reverso">
+      <div class="imagem">
+        <img src="https://cdn.pixabay.com/photo/2017/06/29/02/14/cleaning-2450175_960_720.jpg" alt="Equipe de limpeza escolar">
+      </div>
+      <div class="texto">
+        <h2>Equipe de Limpeza</h2>
+        <p>
+          A equipe de limpeza é essencial para o bom funcionamento da escola. Com dedicação e zelo, garantem que cada ambiente esteja sempre limpo, seguro e agradável para alunos, professores e visitantes.
+        </p>
+        <p>
+          Seu trabalho silencioso e constante faz toda a diferença no dia a dia escolar, promovendo bem-estar e saúde para toda a comunidade.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENCERRAMENTO -->
+    <section class="final">
+      <p>
+        No CEPI, acreditamos que a educação é uma caminhada feita de mãos dadas. Direção, coordenação e professores trabalham juntos para formar alunos preparados para os desafios do futuro — e, acima de tudo, felizes em aprender.
+      </p>
+      <h3>Venha fazer parte dessa história! 🌟</h3>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 CEPI Joaquim Carvalho Ferreira - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- ======== SCRIPT MENU ======== -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
